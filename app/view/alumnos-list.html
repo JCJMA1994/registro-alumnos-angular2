@@ -1,0 +1,45 @@
+<h1>{{ titulo }}</h1>
+<div id="alumnos-list">
+	<img src="../../assets/imagenes/loader.gif" *ngIf="loading == 'show'" />
+	<div class="table-responsive"> 
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<td>Número de Control</td>
+					<td>Semestre</td>
+					<td>Grupo</td>
+					<td>Categoría</td>
+					<td>Nombres</td>
+					<td>Apellido Paterno</td>
+					<td>Apellido Materno</td>
+					<td>Correo Electrónico</td>
+					<td>Teléfono</td>
+					<td>Sexo</td>
+					<td width=190 align="center">Acciones</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let alumno of alumnos">
+					<td>{{ alumno.numero_control }}</td>
+					<td>{{ alumno.semestre }}</td>
+					<td>{{ alumno.grupo }}</td>
+					<td>{{ alumno.categoria }}</td>
+					<td>{{ alumno.nombres }}</td>
+					<td>{{ alumno.apellido_paterno }}</td>
+					<td>{{ alumno.apellido_materno }}</td>
+					<td>{{ alumno.correo_electronico }}</td>
+					<td>{{ alumno.telefono }}</td>
+					<td>{{ alumno.sexo }}</td>
+					<td width=190> 
+						<a [routerLink]="['/editar-alumno', alumno.id]" href="" class="btn btn-success">Modificar</a>
+						<a (click)="onBorrarConfirm(alumno.id)" class="btn btn-danger">Eliminar</a>
+						<div class="seguro" *ngIf="confirmado === alumno.id">
+							<a (click)="onBorrarAlumno(alumno.id)" class="btn btn-eliminar">Eliminar</a>
+							<a (click)="onCancelarConfirm(alumno.id)" class="btn btn-info">Cancelar</a>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

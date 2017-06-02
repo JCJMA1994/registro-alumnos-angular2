@@ -1,0 +1,84 @@
+<h1>{{ titulo }}</h1>
+<div class="panel-body">
+    <form  #formAlumno="ngForm" (ngSubmit)="onSubmit()" class="form-horizontal">
+        <div class="form-group">
+            <label for="numero_control" class="col-sm-2 control-label">Número de control: *</label>
+            <div class="col-sm-9">
+                <input type="text" name="numero_control" [(ngModel)]="alumno.numero_control" class="form-control" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="semestre" class="col-sm-2 control-label">Semestre: *</label>
+            <div class="col-sm-9">
+                <select [(ngModel)]="alumno.semestre" name="semestre" class="form-control" required>
+                    <option value="Primero" [attr.selected]="alumno.semestre === 'Primero' ? 'selected' : null">Primero</option>
+                    <option value="Segundo" [attr.selected]="alumno.semestre === 'Segundo' ? 'selected' : null">Segundo</option>
+                    <option value="Tercero" [attr.selected]="alumno.semestre === 'Tercero' ? 'selected' : null">Tercero</option>
+                    <option value="Cuarto" [attr.selected]="alumno.semestre === 'Cuarto' ? 'selected' : null">Cuarto</option>
+                    <option value="Quinto" [attr.selected]="alumno.semestre === 'Quinto' ? 'selected' : null">Quinto</option>
+                    <option value="Sexto" [attr.selected]="alumno.semestre === 'Sexto' ? 'selected' : null">Sexto</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="grupo" class="col-sm-2 control-label">Grupo: *</label>
+            <div class="col-sm-9">
+                <input type="text" name="grupo" [(ngModel)]="alumno.grupo" class="form-control" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="categoria" class="col-sm-2 control-label">Categoría: *</label>
+            <div class="col-sm-9">
+                <select [(ngModel)]="alumno.categoria" name="categoria" class="form-control" required>
+                    <option value="Sub 17" [attr.selected]="alumno.categoria === 'Sub 17' ? 'selected' : null">Sub 17</option>
+                    <option value="Sub 20" [attr.selected]="alumno.categoria === 'Sub 20' ? 'selected' : null">Sub 20</option>
+                    <option value="Sub 23" [attr.selected]="alumno.categoria === 'Sub 23' ? 'selected' : null">Sub 23</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="nombres" class="col-sm-2 control-label">Nombres: *</label>
+            <div class="col-sm-9">
+                <input type="text" name="nombres" [(ngModel)]="alumno.nombres" class="form-control" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="apellido_paterno" class="col-sm-2 control-label">Apellido Paterno: *</label>
+            <div class="col-sm-9">
+                <input type="text" name="apellido_paterno" [(ngModel)]="alumno.apellido_paterno" class="form-control" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="apellido_materno" class="col-sm-2 control-label">Apellido Materno: *</label>
+            <div class="col-sm-9">
+                <input type="text" name="apellido_materno" [(ngModel)]="alumno.apellido_materno" class="form-control" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="correo_electronico" class="col-sm-2 control-label">Correo Electrónico: *</label>
+            <div class="col-sm-9">
+                <input type="email" name="correo_electronico" [(ngModel)]="alumno.correo_electronico" class="form-control" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="telefono" class="col-sm-2 control-label">Teléfono: *</label>
+            <div class="col-sm-9">
+            <input type="tel" name="telefono" [(ngModel)]="alumno.telefono" class="form-control" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="sexo" class="col-sm-2 control-label">Sexo: *</label>
+            <div class="col-sm-9">
+                <select [(ngModel)]="alumno.sexo" name="sexo" class="form-control" required>
+                    <option value="Masculino" [attr.selected]="alumno.sexo === 'Masculino' ? 'selected' : null">Masculino</option>
+                    <option value="Femenino" [attr.selected]="alumno.sexo === 'Femenino' ? 'selected' : null">Femenino</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-8">
+                <button type="submit" [disabled]="!formAlumno.form.valid" class="btn btn-success">{{ tituloBoton }}</button>
+            </div>
+        </div>
+    </form>
+</div>

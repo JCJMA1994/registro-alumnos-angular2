@@ -1,0 +1,17 @@
+<header id="header">
+	<a [routerLink]="['/']">
+		<img src="../../assets/imagenes/logo.png" id="logo"/>
+	</a>
+	<h1>{{ titulo }}</h1>
+	<div class="clearfix"></div>
+</header>
+<nav id="nav">
+	<ul>
+		<li><a [routerLink]="['/']">Inicio</a></li>
+		<li><a [routerLink]="['/crear-alumno']">Registrar alumno</a></li>
+	</ul>
+</nav>
+<section class="main">
+	<router-outlet></router-outlet>
+	<div class="clearfix"></div>
+</section>
