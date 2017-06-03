@@ -123,3 +123,62 @@ nav ul li a:hover{
 .data-rest{
 	float:left;
 }
+
+#texto-list {
+
+position: justify;
+
+margin-right: 100px;
+
+margin-top: 20px;
+
+margin-left: 100px;
+
+background: white;
+}
+
+
+p {
+
+text-align: justify;
+
+
+}
+
+
+
+#imagen-list {
+
+position: justify;
+
+margin-right: 250px;
+
+margin-left: 370px;
+
+margin-top: 20px;
+
+}
+
+
+
+#titulo-uno {
+
+text-align: center;
+}
+
+
+
+
+#lista-maestros {
+
+position: justify;
+
+margin-right: 100px;
+
+margin-top: 10px;
+
+margin-left: 100 px;
+
+margin-bottom: 20px;
+
+}
